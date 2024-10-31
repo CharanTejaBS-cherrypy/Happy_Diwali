@@ -1,0 +1,92 @@
+/* Reset and Global Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Playfair Display', serif;
+    overflow: hidden;
+}
+
+.center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+/* Card Styling */
+.card {
+    background: linear-gradient(135deg, #4b007b, #3b0064);
+    color: #f7dba5;
+    width: 90%;
+    max-width: 600px;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+    position: relative;
+    animation: cardEntry 1s ease-out forwards;
+    transform: scale(0.9);
+}
+
+/* Message Styling Inside the Card */
+.message h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3.5em;
+    color: #ffd700;
+    text-shadow: 0 0 15px #ffd700, 0 0 30px #ffed8f;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.message p {
+    font-size: 1.3em;
+    color: #e6c7a0;
+    margin-top: 10px;
+    animation: fadeIn 2.5s ease-in-out;
+}
+
+/* Sparkles Effect */
+.sparkles {
+    position: absolute;
+    top: 10%;
+    width: 100%;
+    height: 80%;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.spark {
+    width: 6px;
+    height: 6px;
+    background: #ffd700;
+    border-radius: 50%;
+    position: absolute;
+    opacity: 0.85;
+    animation: sparklePulse 3s infinite ease-in-out;
+    box-shadow: 0 0 10px #ffd700, 0 0 25px #ffd700, 0 0 40px #ffda79;
+}
+
+/* Entry and Pulse Animations */
+@keyframes sparklePulse {
+    0%, 100% { transform: scale(0.8); opacity: 0; }
+    50% { transform: scale(1.4); opacity: 0.4; }
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes cardEntry {
+    0% { transform: scale(0.7); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
